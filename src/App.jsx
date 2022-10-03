@@ -29,6 +29,7 @@ import ContactPage from './pages/ContactPage/ContactPage';
 const App = () => {
 
   const [user, setUser] = useState(getUser());
+  //dadada
   return (
     <>
       {user ?
