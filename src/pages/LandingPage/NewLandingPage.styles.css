@@ -19,10 +19,13 @@
 
 .sectionOneLeftSide {
   width: 40vw;
+  min-width: 300px;
   padding: 0 40px 0 120px;
   display: flex;
   flex-direction: column;
   justify-content: start;
+  max-height: 100px;
+  margin-bottom: 200px;
 }
 
 .sectionOneRightSide {
@@ -106,4 +109,10 @@
   height: 80vh;
   width: 100vw;
   padding: 50px 0;
+}
+
+@media screen and (max-width: 1100px){
+  .LandingPageImg{
+    width: 0px;
+  }
 }
