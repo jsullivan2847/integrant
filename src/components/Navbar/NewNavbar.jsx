@@ -6,8 +6,11 @@ import { faBell } from '@fortawesome/free-solid-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
 const NewNavbar = ({ user, setUser }) => {
+
+  const [active, setActive] = useState(true)
 
   function handleLogOut() {
     userService.logOut();
@@ -27,7 +30,10 @@ const NewNavbar = ({ user, setUser }) => {
         <>
         <Link className='resourcesBtn' style={{marginRight: "35px"}} to="" onClick={handleLogOut}>Log out</Link>
         <Link style={{ marginRight: "35px" }} to="/account"><FontAwesomeIcon icon={faUserCircle} size="2x" className="highlight" /></Link>
-        <FontAwesomeIcon style={{marginRight: "35px"}} icon={faBell} size="2x" className="highlight" />
+        <div style={{position: 'relative'}}>
+        <FontAwesomeIcon style={{marginRight: "35px", }} icon={faBell} size="2x" className="highlight"/>
+        {active && <div className='red-dot'></div>}
+        </div>
         </>
         }
         
