@@ -33,3 +33,13 @@
   justify-content: center;
   align-items: center;
 }
+
+.red-dot{
+  position: absolute;
+  background-color: red;
+  border-radius: 50%;
+  top:0;
+  left: 14px;
+  width: 17px;
+  height: 17px;
+}
