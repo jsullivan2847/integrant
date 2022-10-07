@@ -46,6 +46,8 @@ const ContactPage = ({ user, setUser }) => {
             <label id='contact-label'><a href ='https://www.linkedin.com/in/mcortezdev/'>Michael Cortez </a> <br /> Software Engineer</label></div>
             <div> <img src={require('../../utils/images/yi.png')} style={{height: '100px'}}></img>
             <label id='contact-label'><a href ='https://www.linkedin.com/in/msyili/'>Yi Li </a> <br /> Software Engineer</label></div>
+            <div><img src={require('../../utils/images/trevor.png')} style={{height: '100px'}}></img>
+            <label id='contact-label'><a href ='https://www.linkedin.com/in/trevor-faivre/'>Trevor Faivre </a> <br /> Software Engineer Lead</label></div>
             <div> <img src={require('../../utils/images/james.png')} style={{height: '100px'}}></img>
             <label id='contact-label'><a href ='https://www.linkedin.com/in/james-d-sullivan/'>James Sullivan</a> <br /> Software Engineer</label></div>
             </div>
