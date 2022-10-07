@@ -27,7 +27,7 @@ const Account = ({ user, setUser }) => {
       const zipcode = questions[0].zipcode;
       const role = questions[0].role;
       const amount = questions[0].amount;
-      // console.log (role + " " + zipcode )
+      console.log (role + " " + zipcode )
       
       const { data, error } = await supabase
       .from('grants_data')

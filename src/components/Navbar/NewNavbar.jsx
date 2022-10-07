@@ -7,8 +7,11 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
+import db_listener from '../../utils/db_listener';
 
 const NewNavbar = ({ user, setUser }) => {
+
+  db_listener();
 
   const [active, setActive] = useState(true)
 
