@@ -13,6 +13,8 @@ const ContactPage = ({ user, setUser }) => {
             <div id='manager-div'>
             <img src={require('../../utils/images/Yev.png')} style={{height: '100px'}}></img>
             <label id='contact-label'><a href ='https://www.linkedin.com/in/yev-kapustian/'>Yevhenii Kapustian</a> <br /> Project Manager </label>
+            <div><img src={require('../../utils/images/sarah.png')} style={{height: '100px'}}></img>
+            <label id='contact-label'><a href ='https://www.linkedin.com/in/sarah-sturgeon/'>Sarah Sturgeon </a> <br /> Product Manager/Data Scientist</label></div>
             </div>
         </div>
         <div >
@@ -57,8 +59,6 @@ const ContactPage = ({ user, setUser }) => {
             <div id='data-div'>
             <div><img src={require('../../utils/images/joshua.png')} style={{height: '100px'}}></img>
             <label id='contact-label'><a href ='https://www.linkedin.com/in/linjoshua/'>Joshua Lin </a> <br /> Data Scientist Lead</label></div>
-            <div><img src={require('../../utils/images/sarah.png')} style={{height: '100px'}}></img>
-            <label id='contact-label'><a href ='https://www.linkedin.com/in/sarah-sturgeon/'>Sarah Sturgeon </a> <br /> Data Scientist</label></div>
             <div><img src={require('../../utils/images/pic3.png')} style={{height: '100px'}}></img>
             <label id='contact-label'><a href ='https://www.linkedin.com/in/irukanwanochie/'> Iruka Nwanochie </a> <br />Data Analyst</label></div>
             <div><img src={require('../../utils/images/pic4.png')} style={{height: '100px'}}></img>
