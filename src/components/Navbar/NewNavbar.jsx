@@ -7,13 +7,13 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
-import db_listener from '../../utils/db_listener';
+import dbChanges from '../../utils/db_listener';
+import DropDown from '../DropDown/DropDown';
+import Notifications from '../Notifications/Notifications';
 
 const NewNavbar = ({ user, setUser }) => {
 
-  db_listener();
-
-  const [active, setActive] = useState(true)
+  dbChanges.on('INSERT', (e) => console.log(e));
 
   function handleLogOut() {
     userService.logOut();
@@ -33,10 +33,7 @@ const NewNavbar = ({ user, setUser }) => {
         <>
         <Link className='resourcesBtn' style={{marginRight: "35px"}} to="" onClick={handleLogOut}>Log out</Link>
         <Link style={{ marginRight: "35px" }} to="/account"><FontAwesomeIcon icon={faUserCircle} size="2x" className="highlight" /></Link>
-        <div style={{position: 'relative'}}>
-        <FontAwesomeIcon style={{marginRight: "35px", }} icon={faBell} size="2x" className="highlight"/>
-        {active && <div className='red-dot'></div>}
-        </div>
+        <Notifications user={user}/>
         </>
         }
         

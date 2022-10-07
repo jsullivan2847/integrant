@@ -1,0 +1,34 @@
+.dropdown{
+    top:45px;
+    right: 30px;
+    position: absolute;
+    border: solid black 1px;
+    background-color: white;
+    height: 200px;
+    width: 120px;
+    border-radius: 3px;
+}
+.list{
+    padding: 5px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+
+}
+li{
+    text-decoration: none;
+    color: black;
+    margin-top: 10px;
+    border-bottom: solid black 1px;
+}
+a{
+    transition: all 50ms;
+    padding: 2px;
+    text-decoration: none;
+    color: black;
+}
+a:hover{
+    background-color: rgb(25,96,211);
+    color: white;
+    border-radius: 5px;
+}
