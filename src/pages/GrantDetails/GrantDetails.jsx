@@ -182,7 +182,7 @@ const GrantDetails = ({ user, setUser }) => {
               <div className='grantButtons'>
                 <a href={resultData[0].url} target='_blank' textDecoration = 'none' className='grantBtn'> <button className='grantBtn' onClick={appliedGrant}>Apply</button></a>
                 <button className='grantBtn' onClick={savedGrant}>Save</button>
-                <button className='grantBtn'>Share</button>
+                <a href='https://www.linkedin.com' target='blank' rel='noreferrer'><button className='grantBtn'>Share</button></a>
               </div>
             </div>
 

@@ -22,7 +22,7 @@ const Account = ({ user, setUser }) => {
       .from('user_profile')
       .select('*')
       .eq('userID', user.id);
-      console.log(questions)
+      // console.log(questions)
    
       const zipcode = questions[0].zipcode;
       const role = questions[0].role;
@@ -61,7 +61,7 @@ useEffect(function () {
     .match({ id:data[0].grantID})
 
     setBusySaved(false);
-    console.log(grantData[0].title)
+    // console.log(grantData[0].title)
     if (data.length===0) {
       setSavedData('Your saved grants will appear here!');
     } else {
@@ -89,10 +89,10 @@ async function getAppliedData() {
     if (data.length===0) {
       setAppliedData('Your applied grants will appear here!');
     } else {
-      console.log(grantData[0])
+      // console.log(grantData[0])
       setAppliedData(grantData[0].title);
     }
-    console.log(appliedData)
+    // console.log(appliedData)
     setAppliedCount(count)
 }
 
@@ -110,7 +110,7 @@ const resultCards = resultData.map((data, idx) => {
     navigate("/results");
   }
 
-  console.log(user.user_metadata.first_name)
+  // console.log(user.user_metadata.first_name)
   return (
     <div className='accountWrapper'>
       <h3>Welcome, {user.user_metadata.first_name}!</h3>
