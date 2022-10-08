@@ -1,6 +1,6 @@
 import { RealtimeClient } from "@supabase/realtime-js";
 
-const db_listener = () => {
+
     const client = new RealtimeClient('wss://kpynmdboeqcwxzexzgjy.supabase.co/realtime/v1',{
 params: {apikey: process.env.REACT_APP_SUPABASE_ANON_KEY}
 })
@@ -10,12 +10,12 @@ params: {apikey: process.env.REACT_APP_SUPABASE_ANON_KEY}
   client.onClose(() => console.log('socket closed'));
   client.onError(() => console.log('Socket error'));
 
-  const dbChanges = client.channel('realtime:*');
-  dbChanges.on('*', (e) => console.log(e));
+  const dbChanges = client.channel('realtime:public:grants_data:state=eq.Nevada');
+//   dbChanges.on('*', (e) => console.log(e));
   dbChanges.on('INSERT', (e) => console.log(e));
-  dbChanges.on('UPDATE', (e) => console.log(e));
-  dbChanges.on('DELETE', (e) => console.log(e));
+//   dbChanges.on('UPDATE', (e) => console.log(e));
+//   dbChanges.on('DELETE', (e) => console.log(e));
   dbChanges.subscribe()
-}
 
-export default db_listener;
+
+export default dbChanges;
