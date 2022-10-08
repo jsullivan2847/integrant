@@ -1,9 +1,11 @@
 .bot-card-wrapper {
   margin: 0 auto;
-  width: 70%;
+  width: 80%;
   justify-content: space-between;
-  padding: 5rem;
+  align-items: center;
+  padding: 4rem;
   display: flex;
+  height: 90%;
 }
 .bot-card {
   box-sizing: border-box;
@@ -13,10 +15,10 @@
   display: flex;
   flex-direction: column;
   justify-content: start;
-  padding: 5rem 2rem;
+  padding: 4rem 2rem;
   margin: 0 1rem;
   width: 19rem;
-  height: 28rem;
+  height: 25rem;
   /* left: 107px; */
   /* top: 1316px; */
   background: #FFFFFF;
