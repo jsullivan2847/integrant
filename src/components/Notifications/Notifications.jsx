@@ -10,31 +10,16 @@ export default function Notifications({user}) {
 
     const [active, setActive] = useState(false)
     const [open, setOpen] = useState(false);
-
+    const [grants,setGrants] = useState([])
     
     dbChanges.on('INSERT', (e) => {
         // console.log(e)
         setActive(true)
     });
-
-    // const getGrants = ( async () => {
-    //     const {data:questions, err}  = await supabase
-    //   .from('user_profile')
-    //   .select('*')
-    //   .eq('userID', user.id);
-    //   return questions;
-    // })
-
-    // console.log(getGrants())
-
-    const [grants,setGrants] = useState([])
-
     useEffect(() => {
         getGrants(user)
         .then((data) => setGrants(data))
     }, [active])
-
-    // console.log(grants)
 
     function handleBellClick(){
         !open ? setOpen(true) : setOpen(false)
