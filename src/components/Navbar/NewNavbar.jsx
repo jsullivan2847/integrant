@@ -6,14 +6,11 @@ import { faBell } from '@fortawesome/free-solid-svg-icons'
 import { faSearch } from '@fortawesome/free-solid-svg-icons'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
-import { useState } from 'react';
-import dbChanges from '../../utils/db_listener';
-import DropDown from '../DropDown/DropDown';
 import Notifications from '../Notifications/Notifications';
 
 const NewNavbar = ({ user, setUser }) => {
 
-  dbChanges.on('INSERT', (e) => console.log(e));
+ 
 
   function handleLogOut() {
     userService.logOut();

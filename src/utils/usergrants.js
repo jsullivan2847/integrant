@@ -18,7 +18,8 @@ const { data, error } = await supabase
 .select('*')
 .in('state', [zipcode, 'All'])
 .ilike('tags', '%'+role+'%')
-.order('opp_type', { ascending: false })
+.order('id', { ascending: false })
+.limit(1)
 
     return await data
 })

@@ -3,10 +3,19 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBell } from '@fortawesome/free-regular-svg-icons'
 import DropDown from '../DropDown/DropDown'
 import { useState, useEffect } from 'react'
-import { supabase } from '../../utils/supabase'
+import dbChanges from '../../utils/db_listener'
 import getGrants from '../../utils/usergrants'
 
 export default function Notifications({user}) {
+
+    const [active, setActive] = useState(false)
+    const [open, setOpen] = useState(false);
+
+    
+    dbChanges.on('INSERT', (e) => {
+        // console.log(e)
+        setActive(true)
+    });
 
     // const getGrants = ( async () => {
     //     const {data:questions, err}  = await supabase
@@ -23,14 +32,9 @@ export default function Notifications({user}) {
     useEffect(() => {
         getGrants(user)
         .then((data) => setGrants(data))
-    }, [])
+    }, [active])
 
-
-
-    
-
-    const [active, setActive] = useState(true)
-    const [open, setOpen] = useState(false);
+    // console.log(grants)
 
     function handleBellClick(){
         !open ? setOpen(true) : setOpen(false)

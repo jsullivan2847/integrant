@@ -14,10 +14,8 @@ export default function DropDown({grants}) {
   return (
     <div className='dropdown'>
         <ul className='list'>
-            {grants && grants.map((grant, index) => {
-                return <li>
-                    <a key={index} href="">{grant.id}</a>
-                </li>
+            {grants && grants.map((grant) => {
+                return <li key={grant.id} ><a href="">{grant.title}</a></li>
             })}
         </ul>
     </div>
