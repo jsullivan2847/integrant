@@ -3,20 +3,20 @@ import './DropDown.css'
 import { Link } from 'react-router-dom'
 import { useState, useEffect } from 'react';
 
-export default function DropDown() {
+export default function DropDown({grants}) {
 
-    const [grants,SetGrants] = useState([])
+    // const [list,setList] = useState(null)
     
-    useEffect(() => {
-        SetGrants(['New Grant','New Grant','New Grant','New Grant','New Grant',])
-    })
-
+    // useEffect(() => {
+    //     grants ? setList(grants) : <></>
+    // },[grants])
+    console.log(grants)
   return (
     <div className='dropdown'>
         <ul className='list'>
-            {grants && grants.map((grant) => {
+            {grants && grants.map((grant, index) => {
                 return <li>
-                    <a href="">{grant}</a>
+                    <a key={index} href="">{grant.id}</a>
                 </li>
             })}
         </ul>

@@ -18,10 +18,11 @@ export default function Notifications({user}) {
 
     // console.log(getGrants())
 
-    const [grants,SetGrants] = useState([])
+    const [grants,setGrants] = useState([])
 
     useEffect(() => {
-        SetGrants(getGrants(user))
+        getGrants(user)
+        .then((data) => setGrants(data))
     }, [])
 
 
@@ -43,7 +44,7 @@ export default function Notifications({user}) {
         icon={faBell} size="2x" 
         className="highlight"/>
         {active && <div className='red-dot'></div>}
-        {open &&  <DropDown/>}
+        {open &&  <DropDown grants={grants}/>}
     </div>
   )
 }
