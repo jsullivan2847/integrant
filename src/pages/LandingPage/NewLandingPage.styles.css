@@ -4,7 +4,7 @@
 }
 
 .sectionOne {
-  height: 60vh;
+  height: 85vh;
   width: 100vw;
 }
 
@@ -18,8 +18,8 @@
 }
 
 .sectionOneLeftSide {
-  width: 40vw;
-  padding: 0 40px 0 120px;
+  /* width: 40vw; */
+  padding: 0 40px 0 90px;
   display: flex;
   flex-direction: column;
   justify-content: start;
@@ -30,7 +30,7 @@
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  width: 60vw;
+  /* width: 60vw; */
 }
 
 .LandingPageImg {
@@ -78,7 +78,7 @@
 }
 
 .sectionTwo {
-  height: 60vh;
+  height: 80vh;
   width: 100vw;
   display: flex;
   flex-direction: column;
@@ -95,7 +95,7 @@
 }
 
 .sectionTwoWhat {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   display: flex;
   flex-direction: row;
