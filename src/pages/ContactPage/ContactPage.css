@@ -7,6 +7,16 @@
     width: 100vw
 }
 
+.contact-main-div:first-child {
+
+}
+
+#manager-div {
+    margin: 0px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1fr
+}
+
 #contact-label{
     display: block;
     font-size: small;
@@ -15,17 +25,27 @@
 #design-div {
     justify-content: space-around;
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding-top: 30px;
     padding-bottom: 30px;
+    border: rgb(0, 105, 252) 8px;
 }
 
-#enginneer-div{
+#design-div > div > img {
+    border: rgb(0, 105, 252) 8px;
+    border-radius: 100%;
+}
+
+#engineer-div{
     justify-content: space-around;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     padding-top: 30px;
     padding-bottom: 30px;
+}
+
+#engineer-div > div > img {
+    border-radius: 100%;
 }
 
 #data-div{
