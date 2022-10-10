@@ -22,11 +22,12 @@ const Account = ({ user, setUser }) => {
       .from('user_profile')
       .select('*')
       .eq('userID', user.id);
-      // console.log(questions)
+      const userData = questions[0];
    
-      const zipcode = questions[0].zipcode;
-      const role = questions[0].role;
-      const amount = questions[0].amount;
+      // const zipcode = questions[0].zipcode;
+      // const role = questions[0].role;
+      // const amount = questions[0].amount;
+      const {zipcode, role, amount} = userData;
       // console.log (role + " " + zipcode )
       
       const { data, error } = await supabase
