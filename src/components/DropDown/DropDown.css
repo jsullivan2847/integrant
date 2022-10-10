@@ -5,7 +5,7 @@
     border: solid black 1px;
     background-color: white;
     height: 200px;
-    width: 120px;
+    width: 130px;
     border-radius: 3px;
 }
 .list{
@@ -15,6 +15,9 @@
     flex-direction: column;
 }
 li{
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
     text-decoration: none;
     color: black;
     margin-top: 10px;
@@ -31,3 +34,14 @@ a:hover{
     color: white;
     border-radius: 5px;
 }
+/* button{
+  border: none;
+  background-color: rgb(238, 141, 141);
+  border-radius: 50%;
+  width: 10px;
+  height: 12px;
+}
+button:hover{
+    background-color: red;
+    cursor: pointer;
+} */

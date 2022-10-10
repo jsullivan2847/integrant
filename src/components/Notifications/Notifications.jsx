@@ -8,18 +8,15 @@ import getGrants from '../../utils/usergrants'
 
 export default function Notifications({user}) {
 
-    const [active, setActive] = useState(false)
+    const [active, setActive] = useState(null)
     const [open, setOpen] = useState(false);
     const [grants,setGrants] = useState([])
-    
+
     dbChanges.on('INSERT', (e) => {
-        // console.log(e)
         setActive(true)
-    });
-    useEffect(() => {
         getGrants(user)
         .then((data) => setGrants(data))
-    }, [active])
+    });
 
     function handleBellClick(){
         !open ? setOpen(true) : setOpen(false)
@@ -33,7 +30,7 @@ export default function Notifications({user}) {
         icon={faBell} size="2x" 
         className="highlight"/>
         {active && <div className='red-dot'></div>}
-        {open &&  <DropDown grants={grants}/>}
+        {open &&  <DropDown grants={grants} setGrants={setGrants} setActive={setActive}/>}
     </div>
   )
 }
