@@ -11,7 +11,7 @@ export default function Notifications({user}) {
     const [active, setActive] = useState(null)
     const [open, setOpen] = useState(false);
     const [grants,setGrants] = useState([])
-    
+
     dbChanges.on('INSERT', (e) => {
         setActive(true)
         getGrants(user)

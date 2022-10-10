@@ -5,12 +5,6 @@ import { useState, useEffect } from 'react';
 
 export default function DropDown({grants, setGrants, setActive}) {
 
-  const [notifs, setNotifs] = useState([])
-
-  // useEffect(() => {
-  //   setNotifs(grants)
-  // },[grants])
-
   function deleteButton(e){
     setGrants(null)
     setActive(false)
