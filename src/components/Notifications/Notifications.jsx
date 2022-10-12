@@ -20,8 +20,8 @@ export default function Notifications({ user }) {
   }, []);
 
   const client = connectDb();
-  client.onOpen(() => console.log('socket opened'));
-  client.onClose(() => console.log('socket closed'));
+  // client.onOpen(() => console.log('socket opened'));
+  // client.onClose(() => console.log('socket closed'));
 
   if(userData){
     const dbChanges = client.channel(
