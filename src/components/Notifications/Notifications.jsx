@@ -3,8 +3,9 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBell } from "@fortawesome/free-regular-svg-icons";
 import DropDown from "../DropDown/DropDown";
 import { useState, useEffect } from "react";
-import { getUserData, getGrants } from "../../utils/user_data";
+import { getUserData, retrieveGrant } from "../../utils/user_data";
 import { connectDb } from "../../utils/db_listener";
+import { supabase } from "../../utils/supabase";
 
 export default function Notifications({ user }) {
   
@@ -13,21 +14,26 @@ export default function Notifications({ user }) {
   const [grants, setGrants] = useState(null);
   const [userData, setUserData] = useState(null);
 
+
   useEffect(() => {
-    getUserData(user).then((data) => setUserData(data));
+    getUserData(user).then((data) => setUserData(data))
   }, []);
 
   const client = connectDb();
+  client.onOpen(() => console.log('socket opened'));
+  client.onClose(() => console.log('socket closed'));
 
-  const dbChanges = client.channel(
-    `realtime:public:grants_data:state=eq.${userData.zipcode}`
-  );
-  dbChanges.subscribe();
-
-  dbChanges.on("INSERT", (e) => {
-    setActive(true);
-    getGrants(user).then((data) => setGrants(data));
-  });
+  if(userData){
+    const dbChanges = client.channel(
+      `realtime:public:grants_data:state=eq${userData.zipcode}`
+    );
+    dbChanges.subscribe();
+  
+    dbChanges.on("INSERT", (e) => {
+      setActive(true);
+      retrieveGrant(userData).then((data) => setGrants(data))
+    });
+  }
 
   function handleBellClick() {
     !open ? setOpen(true) : setOpen(false);
