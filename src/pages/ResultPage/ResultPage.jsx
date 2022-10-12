@@ -3,7 +3,6 @@ import { useState , useEffect} from "react"
 
 import { useNavigate } from "react-router-dom";
 import {supabase} from "../../utils/supabase";
-import ResultCard from '../../components/ResultCard/ResultCard'
 import NewResultCard from "../../components/ResultCard/NewResultCard";
 import './ResultPage.styles.css'
 import ToggleSwitch from "../../components/toggleSwitch/toggleSwitch";
@@ -22,12 +21,12 @@ const ResultPage = ({ user, setUser }) => {
       .from('user_profile')
       .select('*')
       .eq('userID', user.id);
-      console.log(questions)
+      // console.log(questions)
    
       const zipcode = questions[0].zipcode;
       const role = questions[0].role;
       const amount = questions[0].amount;
-      console.log (role + " " + zipcode )
+      // console.log (role + " " + zipcode )
       
       const { data, error } = await supabase
       .from('grants_data')
@@ -35,7 +34,7 @@ const ResultPage = ({ user, setUser }) => {
       .in('state', [zipcode, 'All'])
       .ilike('tags', '%'+role+'%')
       .order('opp_type', { ascending: false })
-      console.log(data);
+      // console.log(data);
         setBusy(false);
         setResultData(data);
     }

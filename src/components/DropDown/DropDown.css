@@ -4,7 +4,7 @@
     position: absolute;
     border: solid black 1px;
     background-color: white;
-    height: 200px;
+    height: fit-content;
     width: 130px;
     border-radius: 3px;
 }
