@@ -25,13 +25,14 @@ export default function Notifications({ user }) {
 
   if(userData){
     const dbChanges = client.channel(
-      `realtime:public:grants_data:state=eq${userData.zipcode}`
+      `realtime:public:grants_data:state=eq.${userData.zipcode}`
     );
     dbChanges.subscribe();
   
     dbChanges.on("INSERT", (e) => {
       setActive(true);
       retrieveGrant(userData).then((data) => setGrants(data))
+      console.log(grants)
     });
   }
 
